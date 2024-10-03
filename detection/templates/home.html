@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - EZI Phishing Detection System {% endblock %}
+
+{% block content %}
+    <h1>A MULTI-LANGUAGE PHISHING DETECTION SYSTEM FOR SAFEGUARDING SOCIAL MEDIA AND WEB</h1>
+    <p>Select one of the following options to check for phishing threats:</p>
+
+    <div class="detection-options">
+        <a href="{% url 'keyword_phishing' %}">Keyword Phishing Detection</a>
+        <a href="{% url 'url_phishing' %}">URL Phishing Detection</a>
+        <a href="{% url 'real_time_phishing' %}">Real-Time Phishing Detection</a>
+    </div>
+{% endblock %}

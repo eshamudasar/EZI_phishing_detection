@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Real-Time Phishing Detection{% endblock %}
+
+{% block content %}
+    <h1>Real-Time Phishing Detection</h1>
+    <form action="{% url 'real_time_phishing' %}" method="post">
+        {% csrf_token %}
+        <label for="url">Enter the URL for real-time analysis:</label>
+        <input type="text" name="url" id="url" placeholder="https://example.com">
+        <button type="submit">Analyze URL</button>
+    </form>
+
+    {% if result %}
+        <h2>URL Result: {{ result }}</h2>
+    {% endif %}
+
+    {% if content_results %}
+        <h2>Page Content Analysis:</h2>
+        <ul>
+            {% for content in content_results %}
+                <li>{{ content }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

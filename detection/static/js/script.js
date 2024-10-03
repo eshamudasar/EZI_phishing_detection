@@ -1,0 +1,30 @@
+// script.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Example: Validate input before form submission
+    const keywordForm = document.querySelector('#keyword-form');
+    const urlForm = document.querySelector('#url-form');
+
+    // Keyword form validation
+    if (keywordForm) {
+        keywordForm.addEventListener('submit', function (e) {
+            const textInput = document.querySelector('#text');
+            if (textInput.value.trim() === '') {
+                e.preventDefault();
+                alert('Please enter a message to check for phishing.');
+            }
+        });
+    }
+
+    // URL form validation
+    if (urlForm) {
+        urlForm.addEventListener('submit', function (e) {
+            const urlInput = document.querySelector('#url');
+            const urlPattern = /^(http|https):\/\/[^ "]+$/; // Basic URL validation
+            if (!urlPattern.test(urlInput.value.trim())) {
+                e.preventDefault();
+                alert('Please enter a valid URL (e.g., https://example.com).');
+            }
+        });
+    }
+});

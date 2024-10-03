@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}URL Phishing Detection{% endblock %}
+
+{% block content %}
+    <h1>URL Phishing Detection</h1>
+    <form id="url-form" action="{% url 'url_phishing' %}" method="post">
+        {% csrf_token %}
+        <label for="url">Enter the URL:</label>
+        <input type="text" name="url" id="url" placeholder="https://example.com">
+        <button type="submit">Check for Phishing</button>
+    </form>
+    
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+{% endblock %}

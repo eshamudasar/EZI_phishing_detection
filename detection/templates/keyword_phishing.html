@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Keyword Phishing Detection{% endblock %}
+
+{% block content %}
+<!-- keyword_phishing.html -->
+<form method="POST">
+    {% csrf_token %}
+    <label for="text">Enter your text:</label>
+    <textarea name="text" id="text" rows="4" cols="50"></textarea>
+    <button type="submit">Check</button>
+</form>
+
+   {% if result %}
+     <h2>Result: {{ result }}</h2>
+   {% endif %}
+{% endblock %}
+
+
