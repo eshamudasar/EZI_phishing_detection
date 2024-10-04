@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
+{% load static %}  <!-- Add this line to load static files -->
+
+{% block title %}Login - EZI Phishing Detection{% endblock %}
+
 {% block content %}
   <!-- The popup login form -->
-<div class="form-container">
+  <div class="form-container">
     <div id="myForm" class="form-popup">
       <form class="form-container">
         <h1>Login</h1>
@@ -15,4 +19,8 @@
       </form>
     </div>
   </div>
+
+  
+  <script src="{% static 'js/script.js' %}" defer></script>
+
 {% endblock %}

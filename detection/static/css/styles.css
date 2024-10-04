@@ -1,7 +1,7 @@
 /* General styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #758a8b; /* Main background color */
+    background-color: #ffffff; /* Main background color */
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,17 +9,6 @@ body {
 }
 
 /* Navbar styles */
-.navbar {
-    background-color: #007bff;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between; /* Align logo to left, toggle and nav items to right */
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
 
 .navbar-brand {
     font-size: 1.8rem;
@@ -54,14 +43,14 @@ body {
 
 .navbar-nav {
     display: flex;
-    gap: 50px; /* Increased gap for a more spacious look */
+    gap: 40px; /* Increased gap for a more spacious look */
     align-items:start;
     padding:15px;
     margin-left:auto;
 }
-.navbar-nav  img {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
+.nav-link  img {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
   }
 .nav-link {
     color: white !important;
@@ -186,7 +175,7 @@ main {
 .animated-text {
     font-size: 2.5rem;
     color: #333;
-    animation: textSlideIn 2s ease-in-out;
+    animation: textSlideIn 3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -208,25 +197,6 @@ main {
         opacity: 1;
     }
 }
-
-.detection-options a {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.detection-options a:hover {
-    background-color: #0056b3;
-}
-
-
-
-
 .hero {
     background-size: cover;
     height: 100vh;
@@ -238,32 +208,45 @@ main {
     color: rgb(232, 246, 251);
 
 }
-/* Container for detection options */
+
+.container {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Styling for buttons */
+
 .detection-options {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    margin-top: 2rem;
     gap: 20px;  /* Add space between buttons */
     margin-top: 40px;  /* Add margin for better spacing */
     margin-bottom: 100px;
 }
 
-/* Styling for buttons */
-.btn-detect {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #007bff;
+.detection-options a {
+    display: block;
+    padding: 1rem;
+    background: linear-gradient(90deg, #8cb2c5, #135a26, #f48c2a8a); /* Use 'background' instead of 'background-color' */
     color: white;
-    border-radius: 10px;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: transform 0.3s, background-color 0.3s;
-    margin: 10px;  /* Add margins between options */
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Animation for buttons (hover effect) */
-.btn-detect:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);  /* Slight zoom effect on hover */
+/* Optional: Add hover effect for buttons */
+.detection-options a:hover {
+    background: linear-gradient(90deg,#f48c2a8a,  #135a26, #8cb2c5 ); /* Reversed gradient for hover effect */
 }
 
 /* Add entry animation for buttons */
@@ -284,7 +267,6 @@ main {
 .animated-buttons a:nth-child(3) {
     animation-delay: 0.5s;
 }
-
 /* Keyframes for button fade-in animation */
 @keyframes buttonFadeIn {
     0% {
@@ -296,54 +278,173 @@ main {
         transform: translateY(0);
     }
 }
-
-
-.container {
-    padding: 2rem;
-}
-
-footer {
-    text-align: center;
-    padding: 0.5rem;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.detection-options {
+/*log in form   */
+/* Form Container */
+.form-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:white;
+    position: relative;
 }
 
-.detection-options a {
-    display: block;
-    padding: 1rem;
-    background-color: #8cb2c5;
-    color: white;
-    text-decoration: none;
+/* Popup Form */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #999;
+    background-color: white;
+    padding: 30px;
+    z-index: 9;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     border-radius: 5px;
 }
 
-.detection-options a:hover {
-    background-color: #c9e9cb;
-}
-
-form {
-    margin-top: 2rem;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-form input, form textarea {
+/* Buttons */
+.btn {
+    background-color: #8bb3b7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
     width: 100%;
-    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #95b2c2;
+}
+
+/* Cancel Button */
+.cancel {
+    background-color: #92baae;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Close Button */
+.btn.cancel {
+    background-color: #f44336;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .form-popup {
+        width: 90%;
+    }
+}
+
+
+/* General Container for About Us Section */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Primary Heading (h1) Styling */
+.heading-primary {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #135a26;
+    font-weight: bold;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+/* Secondary Heading (h2) Styling */
+.heading-secondary {
+    font-size: 2rem;
+    color: #f48c2a;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+/* Styling for the List Items */
+.about-list, .features-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-list li, .features-list li {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+    position: relative;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.about-list li:before, .features-list li:before {
+    content: "✔️";
+    position: absolute;
+    left: -25px;
+    color: #135a26;
+    font-size: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

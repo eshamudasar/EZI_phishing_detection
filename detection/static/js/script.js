@@ -1,6 +1,14 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function () {
+    // Function to open the login form
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    // Function to close the login form
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
     // Example: Validate input before form submission
     const keywordForm = document.querySelector('#keyword-form');
     const urlForm = document.querySelector('#url-form');
@@ -27,11 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-      }
-      
-      function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-      }
+    
+    // Assign open and close functions to buttons (if needed)
+    document.querySelector('.open-btn').addEventListener('click', openForm);
+    document.querySelector('.close-btn').addEventListener('click', closeForm);
 });
