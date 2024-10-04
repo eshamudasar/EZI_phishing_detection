@@ -87,6 +87,9 @@ def about(request):
 def downloads(request):
     return render(request, 'downloads.html')
 
+def login(request):
+    return render(request, 'login.html')
+    
 # Keyword Phishing Detection View
 def keyword_phishing(request):
     result = None

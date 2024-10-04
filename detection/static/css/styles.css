@@ -1,30 +1,302 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #758a8b; /* Main background color */
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    line-height: 1.6;
 }
 
+/* Navbar styles */
+.navbar {
+    background-color: #007bff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between; /* Align logo to left, toggle and nav items to right */
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white !important;
+    margin-left: 20px;
+}
+
+.custom-navbar {
+    background: linear-gradient(90deg, #0c3b708a, #135a267f,#f48c2a8a ); /* Gradient background */
+    padding: 20px 30px;
+    border: none;
+    color: white;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+}
+.navbar-toggler {
+    background-color: #c1d0e0;
+    border: none;
+    color: white;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.navbar-toggler-icon {
+    font-size: 2rem;
+    margin-right: 40px;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 50px; /* Increased gap for a more spacious look */
+    align-items:start;
+    padding:15px;
+    margin-left:auto;
+}
+.navbar-nav  img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+  }
+.nav-link {
+    color: white !important;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+
+/* Hover effect with underline animation */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    background-color: #ffeb3b;
+    transition: left 0.3s ease;
+}
+
+.nav-link:hover::before {
+    left: 0;
+}
+
+.nav-link:hover {
+    color: #ffeb3b !important;
+}
+
+/* Main content */
+main {
+    padding: 100px 20px 50px; /* Adjusted for fixed navbar */
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for content */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #b0c1d2;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Modern toggle bar styles */
+.navbar-toggler:hover .navbar-toggler-text {
+    color: #ffeb3b; /* Change color when hovered */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px; /* Reduced gap for mobile */
+    }
+
+    main {
+        padding: 70px 15px; /* Adjusted padding for smaller screens */
+    }
+}
+
+/* Header and main section spacing */
 header {
-    background-color: #333;
+    margin-bottom: 20px;
+}
+
+main {
+    margin-bottom: 60px;
+}
+
+/* Fade-in animation for main content */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modern button animation */
+@keyframes buttonFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-color: #4a3a3a;
+    border-bottom: 1px solid #805050;
+}
+.image-text-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.animated-image {
+    width: 40%;
+    max-width: 600px;
+    height:auto;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out; animation:infinite;
+}
+
+.animated-text {
+    font-size: 2.5rem;
+    color: #333;
+    animation: textSlideIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.detection-options a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #007bff;
     color: white;
-    padding: 1rem;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: white;
+    border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
+
+.detection-options a:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.hero {
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(232, 246, 251);
+
+}
+/* Container for detection options */
+.detection-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Add space between buttons */
+    margin-top: 40px;  /* Add margin for better spacing */
+    margin-bottom: 100px;
+}
+
+/* Styling for buttons */
+.btn-detect {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px;  /* Add margins between options */
+}
+
+/* Animation for buttons (hover effect) */
+.btn-detect:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+/* Add entry animation for buttons */
+.animated-buttons a {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: buttonFadeIn 1s forwards;
+}
+
+.animated-buttons a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.animated-buttons a:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.animated-buttons a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+/* Keyframes for button fade-in animation */
+@keyframes buttonFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .container {
     padding: 2rem;
@@ -32,7 +304,7 @@ nav ul li a {
 
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: #333;
     color: white;
     position: fixed;
@@ -49,14 +321,14 @@ footer {
 .detection-options a {
     display: block;
     padding: 1rem;
-    background-color: #4CAF50;
+    background-color: #8cb2c5;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .detection-options a:hover {
-    background-color: #45a049;
+    background-color: #c9e9cb;
 }
 
 form {
@@ -74,17 +346,4 @@ form input, form textarea {
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
 }

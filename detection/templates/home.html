@@ -1,14 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Home - EZI Phishing Detection System {% endblock %}
+{% load static %}  <!-- Load the static files here -->
+
+{% block title %}Home - EZI Phishing Detection System{% endblock %}
 
 {% block content %}
-    <h1>A MULTI-LANGUAGE PHISHING DETECTION SYSTEM FOR SAFEGUARDING SOCIAL MEDIA AND WEB</h1>
+    <!-- Image and Text Section with Animation -->
+    <div class="image-text-container text-center">
+        <img src="{% static 'images/logo.png' %}" alt="Phishing Detection" class="animated-image">
+        <h1 class="animated-text">A MULTI-LANGUAGE PHISHING DETECTION SYSTEM FOR SAFEGUARDING SOCIAL MEDIA AND WEB</h1>
+    </div>
+
     <p>Select one of the following options to check for phishing threats:</p>
 
-    <div class="detection-options">
-        <a href="{% url 'keyword_phishing' %}">Keyword Phishing Detection</a>
-        <a href="{% url 'url_phishing' %}">URL Phishing Detection</a>
-        <a href="{% url 'real_time_phishing' %}">Real-Time Phishing Detection</a>
+    <!-- Add a class for animated buttons -->
+    <div class="detection-options animated-buttons">
+        <a href="{% url 'keyword_phishing' %}" class="btn-detect">Keyword Phishing Detection</a>
+        <a href="{% url 'url_phishing' %}" class="btn-detect">URL Phishing Detection</a>
+        <a href="{% url 'real_time_phishing' %}" class="btn-detect">Real-Time Phishing Detection</a>
     </div>
+   
 {% endblock %}

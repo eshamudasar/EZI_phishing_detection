@@ -1,18 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}EZI Phishing Detection System{% endblock %}</title>
-    {% load static %}  <!-- Load static files -->
+    <title>EZI Phishing Detection System</title>
+    {% load static %} 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap for responsiveness -->
-    <script src="{% static 'js/script.js' %}" defer></script> <!-- Include JS file -->
+
 </head>
-<body style="background-image: url('{% static 'images/2.jpg' %}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body><header>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+    
             <a class="navbar-brand" href="{% url 'home' %}">
                 EZI Phishing Detection System
             </a>
@@ -30,20 +31,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'downloads' %}">Downloads</a>
                     </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'login' %}"><img src="{% static 'images/1144760.png' %}"></a>
+                    </li>
                 </ul>
             </div>
         </nav>
-    </header>
-
-    <div class="container mt-4">
-        {% block content %}
-        <!-- Content for each page goes here -->
-        {% endblock %}
-    </div>
-
-    <footer class="text-center mt-4">
-        <p>&copy; 2024 EZI Phishing Detection System</p>
-    </footer>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>&copy; EZI Phishing Detection. All rights reserved.</p>
+</footer>
+<script src="{% static 'js/script.js' %}" defer></script>
+     <!-- Include JS file -->
 
     <!-- Optional: Include Bootstrap JS for interactive components -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

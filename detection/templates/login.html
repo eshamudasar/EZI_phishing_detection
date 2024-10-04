@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- The popup login form -->
+<div class="form-container">
+    <div id="myForm" class="form-popup">
+      <form class="form-container">
+        <h1>Login</h1>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
