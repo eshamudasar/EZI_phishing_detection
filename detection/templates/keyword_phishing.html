@@ -15,16 +15,14 @@
         <button type="submit" class="submit-btn">Check</button>
     </form>
 
-        {% if result %}
+    {% if result %}
     <div class="result-box">
         <h2>Result: {{ result }}</h2>
-        {% if result == "spam" %}
-            <img src="{% static 'images/scam.webp' %}" alt="Phishing">
-        {% elif result == "ham" %}
-            <img src="{% static 'images/giphy.webp' %}" alt="Real ">
+        {% load static %}
+        {% if image_url %}
+            <img src="{% static image_url %}" alt="Result Image">
         {% endif %}
     </div>
-{% endif %}
- 
+    {% endif %}
 </div>
 {% endblock %}

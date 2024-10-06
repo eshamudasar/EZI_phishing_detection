@@ -5,6 +5,7 @@
 
 {% block content %}
     <!-- Image and Text Section with Animation -->
+<div class="container">
     <div class="image-text-container ">
         <img src="{% static 'images/logo.png' %}"  style ="float: right; margin: 0px 0px 15px 15px;"  alt="Phishing Detection" class="animated-image">
         <h1 class="animated-text">A MULTI-LANGUAGE PHISHING DETECTION SYSTEM FOR SAFEGUARDING SOCIAL MEDIA AND WEB</h1>
@@ -18,5 +19,5 @@
         <a href="{% url 'url_phishing' %}" class="btn-detect">URL Phishing Detection</a>
         <a href="{% url 'real_time_phishing' %}" class="btn-detect">Real-Time Phishing Detection</a>
     </div>
-   
+</div> 
 {% endblock %}

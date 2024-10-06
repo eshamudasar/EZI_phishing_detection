@@ -135,6 +135,8 @@ def login(request):
 # Keyword Phishing Detection View
 def keyword_phishing(request):
     result = None
+    image_url = None  # Initialize image_url to avoid the UnboundLocalError
+
     if request.method == 'POST':
         text = request.POST.get('text')
         language = detect_language(text)
@@ -143,7 +145,16 @@ def keyword_phishing(request):
         else:
             result = detect_phishing(text, language)
             result = f"The entered text is classified as {result}."
-    return render(request, 'keyword_phishing.html', {'result': result})
+            
+            
+            # Set the image URL based on the result
+            if "spam" in result:
+                image_url = 'images/scam.webp'
+            elif "ham" in result:
+                image_url = 'images/legit.webp'
+    
+    # Pass both result and image_url to the template
+    return render(request, 'keyword_phishing.html', {'result': result, 'image_url': image_url})
 
 # URL Phishing Detection View
 def url_phishing(request):
