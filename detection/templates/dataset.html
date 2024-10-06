@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Phishing Detection Dataset{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Phishing Detection Dataset</h1>
+        <p>Here are the files in the dataset:</p>
+        <ul>{% for file in files %}
+            <li>
+              <a href="/FYP/{{ file }}" download>Download {{ file }}</a>            
+            </li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

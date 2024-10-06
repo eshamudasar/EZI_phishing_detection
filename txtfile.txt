@@ -1,2 +1,25 @@
+python3 -m venv myenv
+
 source myenv/bin/activate
 python manage.py runserver
+
+
+--urlpatterns includes the static serving configuration:
+from django.conf import settings
+from django.conf.urls.static import static
+
+# Serve files from the 'FYP' folder in debug mode
+if settings.DEBUG:
+    urlpatterns += static('/FYP/', document_root=os.path.join(settings.BASE_DIR, 'FYP'))
+
+--Make sure that the permissions for the files in the "FYP" folder allow them to be read by the web server. You can adjust the permissions using:
+chmod 644 FYP/spam_ham_detection_model(url).h5
+
+
+--push code to GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/your-username/your-repo-name.git
+git push -u origin main

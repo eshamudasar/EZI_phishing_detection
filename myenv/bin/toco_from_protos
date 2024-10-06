@@ -1,4 +1,4 @@
-#!/workspaces/EZI_phishing_detection/myenv/bin/python
+#!/workspaces/EZI_phishing_detection/myenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

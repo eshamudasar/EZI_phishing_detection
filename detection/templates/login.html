@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 
-{% load static %}  <!-- Add this line to load static files -->
-
 {% block title %}Login - EZI Phishing Detection{% endblock %}
 
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% block content %}
-  <!-- The popup login form -->
-  <div class="form-container">
-    <div id="myForm" class="form-popup">
-      <form class="form-container">
-        <h1>Login</h1>
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <button type="submit" class="btn">Login</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Log in</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter Username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter Password" required>
+        </div>
+        <button type="submit" class="btn-login">Login</button>
       </form>
     </div>
   </div>
 
-  
-  <script src="{% static 'js/script.js' %}" defer></script>
+  <script src="{% static 'js/login.js' %}" defer></script>
 
 {% endblock %}

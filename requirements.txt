@@ -1,0 +1,12 @@
+Django
+numpy
+paperclip
+selenium
+pathlib
+pandas
+joblib
+TensorFlow
+sklearn
+pygetwindow
+pyautogui
+bs4

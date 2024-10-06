@@ -7,6 +7,9 @@ from sklearn.preprocessing import StandardScaler
 from urllib.parse import urlparse
 import joblib
 from django.http import HttpResponse
+from .models import DatasetFile
+
+from django.conf import settings
 
 # Paths for your models, vectorizers, and scaler
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,9 +87,48 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def downloads(request):
-    return render(request, 'downloads.html')
+def dataset(request):
+    # Define the folder path relative to BASE_DIR (the root folder where manage.py is located)
+    folder_path = os.path.join(settings.BASE_DIR, 'FYP')
+    
+    # Get the list of files in the FYP folder
+    files = []
+    if os.path.exists(folder_path):
+        files = os.listdir(folder_path)
+    
+    # Pass the file names and folder path to the template
+    return render(request, 'dataset.html', {'files': files, 'folder_path': folder_path})
 
+def download_file(request, folder_id):
+    # Get all files in the folder (for example, all files in a dataset)
+    files = DatasetFile.objects.filter(folder_id=folder_id)  # Assuming folder_id is related to the folder
+
+    # Create a temporary ZIP file in memory
+    zip_filename = f"folder_{folder_id}_files.zip"
+    zip_path = os.path.join(settings.MEDIA_ROOT, zip_filename)
+    
+    # Open the zip file for writing
+    with zipfile.ZipFile(zip_path, 'w') as zip_file:
+        for file in files:
+            file_path = file.file.path  # Get the file path from the file field
+            zip_file.write(file_path, os.path.basename(file_path))  # Add file to the zip archive
+
+    # Return the zipped file as a response
+    response = HttpResponse(open(zip_path, 'rb'), content_type='application/zip')
+    response['Content-Disposition'] = f'attachment; filename="{zip_filename}"'
+    
+    # Cleanup the zip file after download
+    os.remove(zip_path)
+    
+    return response
+
+def downloads(request):
+    downloads = [
+        {'name': 'Phishing Detection User Guide', 'url': '#'},
+        {'name': 'Datasets for Phishing Detection', 'url': 'dataset.html'},
+    ]
+    return render(request, 'downloads.html', {'downloads': downloads})
+    
 def login(request):
     return render(request, 'login.html')
     

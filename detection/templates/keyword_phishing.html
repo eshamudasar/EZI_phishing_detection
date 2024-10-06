@@ -3,17 +3,28 @@
 {% block title %}Keyword Phishing Detection{% endblock %}
 
 {% block content %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <!-- keyword_phishing.html -->
-<form method="POST">
-    {% csrf_token %}
-    <label for="text">Enter your text:</label>
-    <textarea name="text" id="text" rows="4" cols="50"></textarea>
-    <button type="submit">Check</button>
-</form>
+<div class="key-container">
+    <h1 class="page-title">Keyword Phishing Detection</h1>
+    <form method="POST" class="phishkey-form">
+        {% csrf_token %}
+        <label for="text">Enter your text:</label>
+        <textarea name="text" id="text" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+        <button type="submit" class="submit-btn">Check</button>
+    </form>
 
-   {% if result %}
-     <h2>Result: {{ result }}</h2>
-   {% endif %}
+        {% if result %}
+    <div class="result-box">
+        <h2>Result: {{ result }}</h2>
+        {% if result == "spam" %}
+            <img src="{% static 'images/scam.webp' %}" alt="Phishing">
+        {% elif result == "ham" %}
+            <img src="{% static 'images/giphy.webp' %}" alt="Real ">
+        {% endif %}
+    </div>
+{% endif %}
+ 
+</div>
 {% endblock %}
-
-

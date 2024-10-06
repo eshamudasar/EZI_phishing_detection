@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 
+
 {% block title %}Downloads - EZI Phishing Detection{% endblock %}
 
 {% block content %}
-    <h1>Downloads</h1>
-    <p>Here you can download resources related to phishing detection:</p>
-    <ul>
-        <li><a href="#">Phishing Detection User Guide</a></li>
-        <li><a href="#">Datasets for Phishing Detection</a></li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Downloads</h1>
+        <p>Here you can download resources related to phishing detection:</p>
+        <div class="downloads-list">
+          <ul>
+            {% for download in downloads %}
+              <li>
+                <a href="{{ download.url }}">{{ download.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

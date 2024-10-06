@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
     // Function to open the login form
     function openForm() {
         document.getElementById("myForm").style.display = "block";
@@ -39,4 +40,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Assign open and close functions to buttons (if needed)
     document.querySelector('.open-btn').addEventListener('click', openForm);
     document.querySelector('.close-btn').addEventListener('click', closeForm);
+    
 });
