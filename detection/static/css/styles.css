@@ -6,8 +6,16 @@ body {
     margin-bottom:0%;
     padding: 0;
     line-height: 1.6;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+        
 }
+.main{
+ padding:10%;
 
+}
 /* Navbar styles */
 
 .navbar-brand {
@@ -425,67 +433,95 @@ footer {
   }
 
   /* Container for the keyword detection page */
- /* Global Styles */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-   font-family: Arial, sans-serif;
-    background-color: #93b2c1;
-    color: #333;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #8fd1a2;
-  }
-  
-  /* Phishing Detection Result Styles */
-  
-  .result {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #d6ac848a;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .result img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .result h2 {
-    margin-top: 0;
-  }
-  
-  .result p {
-    margin-bottom: 20px;
-  }
-  
-  /* Image Display Styles */
-  
-  .image-display {
+ .key-container {
+    background-color: #ffffff;
+    max-width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.phishkey-form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
-  }
-  
-  .image-display img {
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border-radius: 10px;
+    align-items: center;
+}
+
+.phishkey-form label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.phishkey-form textarea {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f4f8fb;
+}
+
+.phishkey-form .submit-btn {
+    background-color: #2c5d63;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
     cursor: pointer;
-  }
-  
-  .image-display img:hover {
-    transform: scale(1.1);
-  }
+    transition: background-color 0.3s ease;
+}
+
+.phishkey-form .submit-btn:hover {
+    background-color: #1d4044;
+}
+
+/* Phishing Detection Result Styles */
+.result-box {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #edf7ed;
+    border-radius: 15px;
+    border: 2px solid #c9e4c5;
+}
+
+.result-box h2 {
+    margin-bottom: 15px;
+}
+
+.result-box img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .key-container {
+        padding: 20px;
+    }
+    
+    .phishkey-form textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}
