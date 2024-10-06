@@ -3,6 +3,10 @@
 {% block title %}URL Phishing Detection{% endblock %}
 
 {% block content %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!-- url_phishing.html -->
+<div class="key-container">
     <h1>URL Phishing Detection</h1>
     <form id="url-form" action="{% url 'url_phishing' %}" method="post">
         {% csrf_token %}
@@ -10,8 +14,16 @@
         <input type="text" name="url" id="url" placeholder="https://example.com">
         <button type="submit">Check for Phishing</button>
     </form>
-    
-    {% if result %}
+<div class="result-wrapper">
+    {% if result %}    
+    <div class="result-container">
         <h2>Result: {{ result }}</h2>
+    </div>
+    {% if image_url %}
+        <img src="{% static image_url %}" alt="Result Image">
+    {% endif %}
+
+    </div>
+</div>
     {% endif %}
 {% endblock %}

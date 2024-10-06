@@ -159,11 +159,17 @@ def keyword_phishing(request):
 # URL Phishing Detection View
 def url_phishing(request):
     result = None
+    image_url = None 
     if request.method == 'POST':
         url = request.POST.get('url')
         result = predict_phishing(url)
         result = f"The entered URL is classified as {result}."
-    return render(request, 'url_phishing.html', {'result': result})
+            # Set the image URL based on the result
+        if "phishing" in result:
+            image_url = 'images/giphy.webp'
+        elif "safe" in result:
+            image_url = 'images/safe.webp'
+    return render(request, 'url_phishing.html', {'result': result,'image_url': image_url})
 
 # Real-time Phishing Detection View
 def real_time_phishing(request):
