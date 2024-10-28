@@ -59,6 +59,7 @@ python-jose==3.3.0
 pytweening==1.2.0
 pytz==2023.3.post1
 requests==2.31.0
+tensorboard==2.13.0
 requests-file==2.0.0
 selenium==4.21.0
 smmap==5.0.1
@@ -68,3 +69,5 @@ urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
 webdriver-manager==4.0.2
+flask-limiter==3.5.0
+typing-extensions==4.5.0  #
