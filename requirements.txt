@@ -10,7 +10,6 @@ Deprecated==1.2.14
 Django==4.2.16
 django-cors-headers==4.4.0
 dnspython==2.5.0
-fastapi==0.115.0
 Flask==3.0.0
 Flask-Bcrypt==1.0.1
 Flask-JWT==0.3.2
@@ -69,5 +68,5 @@ urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
 webdriver-manager==4.0.2
-flask-limiter==3.5.0
+flask-limiter==3.4.0  # Example of an earlier version
 typing-extensions==4.5.0  #
