@@ -31,7 +31,7 @@ langid==1.1.6
 pandas==2.0.3
 scikit-learn==1.3.2
 scipy==1.10.0
-tensorflow==2.13.1
+tensorflow
 php==1.2.1
 PyGetWindow==0.0.9
 pyperclip==1.8.2
