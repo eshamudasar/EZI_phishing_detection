@@ -68,4 +68,5 @@ urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
 webdriver-manager==4.0.2
-typing-extensions==4.5.0  #
+flask-limiter==3.5.0  # Use only one version
+typing_extensions>=4.9.0
