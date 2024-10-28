@@ -3,24 +3,39 @@
 {% block title %}Real-Time Phishing Detection{% endblock %}
 
 {% block content %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!-- url_phishing.html -->
+<div class="key-container">
     <h1>Real-Time Phishing Detection</h1>
     <form action="{% url 'real_time_phishing' %}" method="post">
         {% csrf_token %}
         <label for="url">Enter the URL for real-time analysis:</label>
-        <input type="text" name="url" id="url" placeholder="https://example.com">
+        <input type="text" name="url" id="url" placeholder="https://example.com" required>
         <button type="submit">Analyze URL</button>
     </form>
 
+<div class="result-wrapper">
     {% if result %}
+    <div class="result-container">
         <h2>URL Result: {{ result }}</h2>
+    </div>
     {% endif %}
-
-    {% if content_results %}
-        <h2>Page Content Analysis:</h2>
-        <ul>
-            {% for content in content_results %}
-                <li>{{ content }}</li>
-            {% endfor %}
-        </ul>
+    {% if image_url %}
+    <img src="{% static image_url %}" alt="Result Image">
+    {% endif %}
+    {% if page_text %}
+        <h2>Scraped Page Content:</h2>
+        <textarea rows="10" cols="100" readonly>{{ page_text }}</textarea>
+    {% endif %}
+    <div class="scrape">
+    {% if file_url %}
+        <h3>Download Scraped Page Content     </h3>
+        <a href="{% url 'download_file' file_url %}">
+            <button type="button">Download Content</button>
+        </a>
+      </div>
+    </div>
+</div>
     {% endif %}
 {% endblock %}

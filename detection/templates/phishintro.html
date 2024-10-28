@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<style>
+    .about-list li:before, .features-list li:before {
+        content: "✔️  ";
+        position: absolute;
+        left: -35px;
+        color: #135a26;
+        font-size: 1.5rem;
+    }
+    ul.about-list, ul.features-list {
+        list-style-type: none;
+        padding-left: 30px;
+        position: relative;
+    }
+</style>
+
+<h1>Phishing Detection Introduction</h1>
+
+<h2 style="text-align: left;">What is Phishing?</h2>
+<ul class="about-list" style="text-align: left;">
+    <li>Phishing is a cyber attack used to steal sensitive information.</li>
+    <li>Attackers impersonate legitimate organizations or individuals.</li>
+    <li>Phishing attempts can occur via email, websites, or messages.</li>
+    <li>It aims to obtain passwords, credit card numbers, or personal data.</li>
+    <li>Phishing messages often appear legitimate but are deceptive.</li>
+</ul>
+
+<h2 style="text-align: left;">Examples of Phishing Attacks</h2>
+<div class="imag-container" style="text-align: left;">
+    <div class="imag-wrap">
+      <img src="{% static 'images/ex4.jpg' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex7.jpg' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex5.jpg' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex6.jpg' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex8.jpg' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex9.png' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex11.png' %}" alt="Phishing Image">
+      <img src="{% static 'images/example.webp' %}" alt="Phishing Image">
+      <img src="{% static 'images/fakeelines.webp' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex0.png' %}" alt="Phishing Image">
+      <img src="{% static 'images/ex10.png' %}" alt="Phishing Image">
+      <img src="{% static 'images/pr.webp' %}" alt="Phishing Image">
+      <img src="{% static 'images/robo.jpeg' %}" alt="Phishing Image">
+    </div>
+</div>
+
+{% endblock %}
