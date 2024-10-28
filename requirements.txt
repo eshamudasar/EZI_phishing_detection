@@ -68,5 +68,4 @@ urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
 webdriver-manager==4.0.2
-flask-limiter==3.4.0  # Example of an earlier version
 typing-extensions==4.5.0  #
