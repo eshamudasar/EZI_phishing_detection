@@ -76,6 +76,3 @@ urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
 webdriver-manager==4.0.2
-Werkzeug==3.0.2
-wheel==0.43.0
-Whoosh==2.7.4
