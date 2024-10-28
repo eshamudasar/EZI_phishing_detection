@@ -11,6 +11,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Paths for your models, vectorizers, and scaler
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -91,7 +94,11 @@ def real_time_phishing(request):
         options.add_argument('--headless')  # Run in headless mode (no GUI)
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')  # Disable GPU usage
+        options.add_argument('--remote-debugging-port=9222')  # Set remote debugging port
 
+# Set up Selenium WebDriver
+        options.binary_location = "/usr/bin/chromium-browser"
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
         try:
