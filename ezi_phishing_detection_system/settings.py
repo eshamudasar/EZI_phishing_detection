@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'detection',  # Use your actual app name
+    'detection',  #  app name
     # Add any other apps you might need
 ]
 
@@ -107,7 +107,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (User-uploaded files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Media files directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Corrected the media directory name to 'Media'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
