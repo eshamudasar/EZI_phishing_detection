@@ -71,7 +71,6 @@ sqlparse==0.5.1
 tensorboard==2.14.0
 tensorboard-data-server==0.7.2
 tensorflow==2.13.1
-tensorflow-intel==2.16.1
 urllib3==2.2.1
 urlopen==1.0.0
 uvicorn==0.31.0
