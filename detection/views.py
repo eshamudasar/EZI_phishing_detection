@@ -11,6 +11,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
+import tensorflow as tf
 
 # Paths for your models, vectorizers, and scaler
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
