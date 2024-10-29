@@ -22,9 +22,9 @@ TFIDF_ENG_PATH = os.path.join(BASE_DIR, 'FYP', 'tfidf_vectorizer_eng.pkl')
 TFIDF_URDU_PATH = os.path.join(BASE_DIR, 'FYP', 'tfidf_vectorizer_urdu.pkl')
 
 # Load models and vectorizers
-phishing_model = load_model(MODEL_URL_PATH)
-eng_model = load_model(MODEL_ENG_PATH)
-urdu_model = load_model(MODEL_URDU_PATH)
+phishing_model = tf.keras.models.load_model(MODEL_URL_PATH)
+eng_model = tf.keras.models.load_model(MODEL_ENG_PATH)
+urdu_model = tf.keras.models.load_model(MODEL_URDU_PATH)
 scaler = joblib.load(SCALER_PATH)
 eng_vectorizer = joblib.load(TFIDF_ENG_PATH)
 urdu_vectorizer = joblib.load(TFIDF_URDU_PATH)
