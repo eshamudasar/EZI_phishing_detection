@@ -22,6 +22,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Ensure you have a requirements.txt file
 
+    - name: Test Model Load (Debug Step)
+      run: |
+        python -c "import tensorflow as tf; tf.keras.models.load_model('path_to_your_model.h5')"
+
     - name: Collect static files
       run: python manage.py collectstatic --noinput
 
