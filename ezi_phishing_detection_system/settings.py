@@ -22,7 +22,7 @@ SECRET_KEY = '4s=#jl+2tskgp!!^7kosnk$+n=s43(s0o)q3pra&k&*c+gx4$1'  # Replace wit
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = ['https://ezi-c5fcd8csh8c2bheb.canadacentral-01.azurewebsites.net/']  # Allowed hosts for your app
+ALLOWED_HOSTS = ['ezi-c5fcd8csh8c2bheb.canadacentral-01.azurewebsites.net/']  # Allowed hosts for your app
 
 # Application definition
 INSTALLED_APPS = [
