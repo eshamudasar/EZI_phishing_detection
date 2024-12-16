@@ -28,8 +28,8 @@ jobs:
       run: python manage.py migrate 
 
     - name: 'Deploy to Azure Web App'
-      uses: Azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v2
+      id: deploy-to-webapp
       with:
-        app-name: 'EZI'  # Your Azure App Service name
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+         app-name: 'EZI'
+         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA4FCF3D7B9A47C6B8CAD50F2EAB19A9 }}
