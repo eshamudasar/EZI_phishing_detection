@@ -113,3 +113,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Corrected the media directory na
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
