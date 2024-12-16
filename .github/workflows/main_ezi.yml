@@ -28,7 +28,10 @@ jobs:
         
       - name: Collect static files
         run: python manage.py collectstatic --noinput
-
+        
+      - name: Run migrations
+        run: python manage.py runserver
+        
       - name: Zip artifact for deployment
         run: zip -r release.zip . -x "venv/*" "*.git*" "node_modules/*"
 
