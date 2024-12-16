@@ -46,3 +46,4 @@ sqlparse==0.5.1
 urllib3==2.2.1
 urlopen==1.0.0
 webdriver-manager==4.0.2
+whitenoise
