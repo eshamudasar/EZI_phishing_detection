@@ -35,11 +35,3 @@ jobs:
         app-name: 'EZI'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA4FCF3D7B9A47C6B8CAD50F2EAB19A9 }}
 
-    - name: Set up Azure CLI
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.47.0  # Ensure this matches the latest version
-
-    - name: Check deployment logs
-      if: failure()  # Only run if the previous steps fail
-      run: az webapp log tail --name 'EZI' --resource-group 'EZIPhishingDetection'
