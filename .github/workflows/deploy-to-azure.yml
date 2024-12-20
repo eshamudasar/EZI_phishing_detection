@@ -2,7 +2,7 @@ name: Deploy to Azure Web App
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's different
+      - main
 
 jobs:
   build-and-deploy:
@@ -15,21 +15,25 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'  # Specify your Python version
+        python-version: '3.9'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt  # Ensure you have a requirements.txt file
+        pip install -r requirements.txt
+
     - name: Collect static files
       run: python manage.py collectstatic --noinput
 
     - name: Run migrations
-      run: python manage.py migrate 
+      run: python manage.py migrate
 
-    - name: 'Deploy to Azure Web App'
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       id: deploy-to-webapp
       with:
-         app-name: 'EZI'
-         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA4FCF3D7B9A47C6B8CAD50F2EAB19A9 }}
+        app-name: 'EZI'
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA4FCF3D7B9A47C6B8CAD50F2EAB19A9 }}
+
+    - name: Check deployment logs
+      run: az webapp log tail --name 'EZI' --resource-group '<ResourceGroupName>'
