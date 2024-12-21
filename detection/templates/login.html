@@ -3,6 +3,7 @@
 {% block title %}Login - EZI Phishing Detection{% endblock %}
 
 {% load static %} 
+    {% csrf_token %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% block content %}
 <div class="login-cntainer">  
