@@ -105,11 +105,11 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Static files directory
 
 # For production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = 'detection/static'
 
 # Media files (User-uploaded files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Corrected the media directory name to 'Media'
+MEDIA_ROOT = 'media'  # Corrected the media directory name to 'Media'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
