@@ -1,0 +1,119 @@
+ham: GitHub · Where software is built
+spam: Skip to content
+ham: Navigation Menu
+ham: Toggle navigation
+ham:             Sign in
+spam:         Product
+ham: GitHub Copilot
+ham:         Write better code with AI
+spam: Security
+ham:         Find and fix vulnerabilities
+ham: Actions
+ham:         Automate any workflow
+ham: Codespaces
+ham:         Instant dev environments
+ham: Issues
+ham:         Plan and track work
+spam: Code Review
+ham:         Manage code changes
+ham: Discussions
+ham:         Collaborate outside of code
+ham: Code Search
+ham:         Find more, search less
+ham: Explore
+spam:       All features
+ham:       Documentation
+spam:       GitHub Skills
+ham:       Blog
+ham:         Solutions
+ham: By company size
+ham:       Enterprises
+ham:       Small and medium teams
+ham:       Startups
+ham: By use case
+ham:       DevSecOps
+ham:       DevOps
+ham:       CI/CD
+ham:       View all use cases
+spam: By industry
+ham:       Healthcare
+ham:       Financial services
+ham:       Manufacturing
+ham:       Government
+spam:       View all industries
+spam:               View all solutions
+ham:         Resources
+ham: Topics
+ham:       AI
+ham:       DevOps
+spam:       Security
+ham:       Software Development
+spam:       View all
+ham: Explore
+ham:       Learning Pathways
+ham:       White papers, Ebooks, Webinars
+spam:       Customer Stories
+ham:       Partners
+ham:         Open Source
+ham: GitHub Sponsors
+ham:         Fund open source developers
+ham: The ReadME Project
+spam:         GitHub community articles
+ham: Repositories
+ham:       Topics
+ham:       Trending
+ham:       Collections
+ham:         Enterprise
+ham: Enterprise platform
+ham:         AI-powered developer platform
+ham: Available add-ons
+spam: Advanced Security
+spam:         Enterprise-grade security features
+ham: GitHub Copilot
+spam:         Enterprise-grade AI features
+ham: Premium Support
+ham:         Enterprise-grade 24/7 support
+ham: Pricing
+ham: Search or jump to...
+ham: Search code, repositories, users, issues, pull requests...
+ham:         Search
+ham: Clear
+ham:               Search syntax tips
+ham:         Provide feedback
+ham: We read every piece of feedback, and take your input very seriously.
+ham: Include my email address so I can be contacted
+ham:      Cancel
+ham:     Submit feedback
+ham:         Saved searches
+ham: Use saved searches to filter your results more quickly
+ham: Name
+ham: Query
+ham:             To see all available qualifiers, see our documentation.
+ham:      Cancel
+ham:     Create saved search
+ham:                 Sign in
+ham:                 Sign up
+ham: Reseting focus
+ham: You signed in with another tab or window. Reload to refresh your session.
+ham: You signed out in another tab or window. Reload to refresh your session.
+ham: You switched accounts on another tab or window. Reload to refresh your session.
+spam: Dismiss alert
+ham:         dthroner
+ham: /
+ham: Hacking
+ham: Public
+ham: Repository unavailable due to DMCA takedown.
+spam:     This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been publicly posted.
+ham:     If you are the repository owner, and you believe that your repository was disabled as a result of mistake or misidentification, you have the right to file a counter notice and have the repository reinstated. Our help articles provide more details on our DMCA takedown policy and how to file a counter notice. If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.
+ham: Footer
+spam:         © 2024 GitHub, Inc.
+ham: Footer navigation
+ham: Terms
+spam: Privacy
+spam: Security
+ham: Status
+ham: Docs
+ham: Contact
+ham:       Manage cookies
+ham:       Do not share my personal information
+ham:     You can’t perform that action at this time.
