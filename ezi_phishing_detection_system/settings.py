@@ -49,8 +49,12 @@ MIDDLEWARE = [
 ]
 
 # Make sure to match your project's main URLs file name
-ROOT_URLCONF = 'ezi_phishing_detection_system.urls'  
+ROOT_URLCONF = 'ezi_phishing_detection_system.urls' 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://https://ezi-c5fcd8csh8c2bheb.canadacentral-01.azurewebsites.net/',
+    'https://eziphish.com',
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
