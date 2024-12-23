@@ -3,7 +3,7 @@
 {% block title %}Login - EZI Phishing Detection{% endblock %}
 
 {% load static %} 
-    {% csrf_token %}
+   
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% block content %}
 <div class="login-cntainer">  
@@ -11,7 +11,7 @@
   <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="signup">
-      <form>
+      <form> {% csrf_token %}
         <label for="chk" aria-hidden="true">Sign up</label>
         <input type="text" name="txt" placeholder="User name" required="">
         <input type="email" name="email" placeholder="Email" required="">
