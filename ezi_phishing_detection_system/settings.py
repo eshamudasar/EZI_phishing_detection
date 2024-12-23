@@ -52,8 +52,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ezi_phishing_detection_system.urls' 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://https://ezi-c5fcd8csh8c2bheb.canadacentral-01.azurewebsites.net/',
-    'https://eziphish.com',
+    'ezi-c5fcd8csh8c2bheb.canadacentral-01.azurewebsites.net/',
+    'eziphish.com',
 ]
 TEMPLATES = [
     {
