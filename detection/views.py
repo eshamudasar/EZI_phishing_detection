@@ -11,7 +11,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
-import tensorflow as tf
 
 # Paths for your models, vectorizers, and scaler
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +22,9 @@ TFIDF_ENG_PATH = os.path.join(BASE_DIR, 'FYP', 'tfidf_vectorizer_eng.pkl')
 TFIDF_URDU_PATH = os.path.join(BASE_DIR, 'FYP', 'tfidf_vectorizer_urdu.pkl')
 
 # Load models and vectorizers
-phishing_model = tf.keras.models.load_model(MODEL_URL_PATH)
-eng_model = tf.keras.models.load_model(MODEL_ENG_PATH)
-urdu_model = tf.keras.models.load_model(MODEL_URDU_PATH)
+phishing_model = load_model(MODEL_URL_PATH)
+eng_model = load_model(MODEL_ENG_PATH)
+urdu_model = load_model(MODEL_URDU_PATH)
 scaler = joblib.load(SCALER_PATH)
 eng_vectorizer = joblib.load(TFIDF_ENG_PATH)
 urdu_vectorizer = joblib.load(TFIDF_URDU_PATH)
@@ -117,15 +116,17 @@ def real_time_phishing(request):
                 if line.strip():  # Ignore empty lines
                     if language == 'english':
                         label = detect_phishing(line, 'english')
+                        labeled_lines.append(f"{label}: {line}")
                     elif language == 'urdu':
                         label = detect_phishing(line, 'urdu')
+                        labeled_lines.append(f"{label}: {line}")
                     else:
                         label = 'unknown'
-                    labeled_lines.append(f"{label}: {line}")
 
             # Save the scraped content to a temporary text file with labels
             file_name = f"scraped_data_{int(time.time())}.txt"
             file_path = os.path.join(settings.MEDIA_ROOT, file_name)
+
             with open(file_path, 'w', encoding='utf-8') as file:
                 file.write('\n'.join(labeled_lines))
 
@@ -146,17 +147,28 @@ def real_time_phishing(request):
     # Render the result with a download button if the file is ready
     return render(request, 'real_time_phishing.html', {'result': result, 'file_url': file_url, 'image_url': image_url})
 
+from django.http import FileResponse, Http404
 
-# Download the scraped file when the user clicks the button
-def download_file(request, file_name):
-    file_path = os.path.join(settings.MEDIA_ROOT, file_name)
+def downloadfile(request, filename):
+    file_path = os.path.join(settings.MEDIA_ROOT, filename)
     if os.path.exists(file_path):
         with open(file_path, 'rb') as file:
-            response = HttpResponse(file.read(), content_type='text/plain')
-            response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+            response = HttpResponse(file.read(), content_type='application/octet-stream')
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
             return response
     else:
-        return HttpResponse("File not found.", status=404)
+        raise Http404("File does not exist")
+    
+def download_file(request, filename):
+    fyp_folder = os.path.join(settings.BASE_DIR, 'FYP')
+    file_path = os.path.join(fyp_folder, filename)
+
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        raise Http404("File does not exist")
+
+    # Serve the file
+    return FileResponse(open(file_path, 'rb'), as_attachment=True)
 
 # Views for other sections of the website remain the same
 def home(request):
@@ -171,6 +183,11 @@ def dataset(request):
     if os.path.exists(folder_path):
         files = os.listdir(folder_path)
     return render(request, 'dataset.html', {'files': files, 'folder_path': folder_path})
+
+def dataset_view(request):
+    fyp_folder = os.path.join(settings.BASE_DIR, 'FYP')  # Adjusts to FYP in main directory
+    files = [f for f in os.listdir(fyp_folder) if os.path.isfile(os.path.join(fyp_folder, f))]
+    return render(request, 'dataset.html', {'files': files})
 
 def downloads(request):
     downloads = [
