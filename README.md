@@ -71,7 +71,7 @@ The repository is organized as follows:
 This project is a collaborative effort among the following contributors:
 
 - **Esha Mudasar**: [GitHub Profile](https://github.com/eshamudasar)
-- **Ibrahim**: [GitHub Profile](https://github.com/Ibrhim12)
+- **Muhammad Ibrahim**: [GitHub Profile](https://github.com/Ibrhim12)
 - **Zeba Khan**: [GitHub Profile](https://github.com/Zebakhan20)
 
 
