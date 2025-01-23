@@ -71,11 +71,11 @@ The repository is organized as follows:
 This project is a collaborative effort among the following contributors:
 
 - **Esha Mudasar**: [GitHub Profile](https://github.com/eshamudasar)
-- **Ibrahim**: [GitHub Profile](https://github.com/ibrahim12)
+- **Ibrahim**: [GitHub Profile](https://github.com/Ibrhim12)
 - **Zeba Khan**: [GitHub Profile](https://github.com/Zebakhan20)
 
 
 ## Acknowledgments
 
 We extend our gratitude to all contributors and the open-source community for their invaluable support and resources.
-```
+
